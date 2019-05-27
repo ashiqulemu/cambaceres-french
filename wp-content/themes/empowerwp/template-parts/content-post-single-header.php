@@ -1,4 +1,5 @@
 <?php
+ error_reporting(0);
 if ( ! apply_filters( 'mesmerize_show_post_meta', true ) ) {
 	return;
 }

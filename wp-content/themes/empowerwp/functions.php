@@ -60,11 +60,11 @@ empower_require( "inc/defaults.php" );
 
 empower_require( "customizer/customizer.php" );
 
- 
+
 
 
 function empower_enqueue_styles() {
-
+	wp_enqueue_script('custom-js', get_theme_file_uri('/assets/js/custom.js'), array('jquery'), '1.0', true);
 	if ( empower_is_embedded() ) {
 		$text_domain        = empower_text_domain();
 		$parent_text_domain = mesmerize_get_text_domain();
