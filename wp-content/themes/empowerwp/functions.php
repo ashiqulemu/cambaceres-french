@@ -65,6 +65,7 @@ empower_require( "customizer/customizer.php" );
 
 function empower_enqueue_styles() {
 	wp_enqueue_script('custom-js', get_theme_file_uri('/assets/js/custom.js'), array('jquery'), '1.0', true);
+	wp_enqueue_style('custom-css', get_theme_file_uri('/assets/css/custom.css') ,array(),'',false);
 	if ( empower_is_embedded() ) {
 		$text_domain        = empower_text_domain();
 		$parent_text_domain = mesmerize_get_text_domain();
@@ -158,10 +159,10 @@ function empower_info_page_tabs( $tabs ) {
 
 function empower_get_footer_copyright( $copyright, $preview_atts ) {
 
-	$copyright_text = __( 'Built using WordPress and the %s', 'empowerwp' );
-	$copyright_text = sprintf( $copyright_text, '<a target="_blank" href="%s">EmpowerWP Theme</a>' );
+	$copyright_text = __( 'All Right Reserved Cabaceres | Developed by %s', 'empowerwp' );
+	$copyright_text = sprintf( $copyright_text, '<a target="_blank" href="%s">MicroDreamIT</a>' );
 
-	$copyright_text = sprintf( $copyright_text, 'https://extendthemes.com/go/built-with-empower/' );
+	$copyright_text = sprintf( $copyright_text, 'https://www.microdreamit.com/' );
 
 	$copyright = '<p ' . $preview_atts . ' class="copyright">&copy;&nbsp;' . "&nbsp;" . date_i18n( __( 'Y', 'empowerwp' ) ) . '&nbsp;' . esc_html( get_bloginfo( 'name' ) ) . '.&nbsp;' . wp_kses_post( $copyright_text ) . '</p>';
 

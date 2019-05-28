@@ -24,7 +24,9 @@ if (!is_active_sidebar('sidebar-1') || !apply_filters('mesmerize_blog_sidebar_en
 
         <?php if ($author_info) : ?>
         <div class="widget empower_widget_auhor_info">
-            <h5 class="widgettitle"><?php esc_html_e('About the author', 'empowerwp'); ?></h5>
+            <h5 class="widgettitle">
+	            <?php esc_html_e('About the author', 'empowerwp'); ?>
+            </h5>
             <div class="textwidget">
                 <?php echo wpautop($author_info); ?>
             </div>

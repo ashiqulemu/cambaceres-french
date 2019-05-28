@@ -216,17 +216,22 @@ function mesmerize_print_logo($footer = false)
     if (function_exists('has_custom_logo') && has_custom_logo()) {
         $dark_logo_image = get_theme_mod('logo_dark', false);
         if ($dark_logo_image) {
+	        printf('<div class="header-logo-area">');
             $dark_logo_html = sprintf('<a href="%1$s" class="logo-link dark" rel="home" itemprop="url">%2$s</a>', esc_url(home_url('/')), wp_get_attachment_image(absint($dark_logo_image), 'full', false, array(
                 'class'    => 'logo dark',
                 'itemprop' => 'logo',
             )));
-            
+	        printf('<br><span>'.get_bloginfo('description').'</span>');
+	        printf('</div>');
             echo $dark_logo_html;
         }
         
         the_custom_logo();
     } else {
+    	printf('<div class="header-logo-area">');
         printf('<a class="text-logo" data-type="group" ' . $preview_atts . ' data-dynamic-mod="true" href="%1$s">%2$s</a>', esc_url(home_url('/')), mesmerize_bold_text(get_bloginfo('name')));
+	    printf('<div>'.get_bloginfo('description').'</div>');
+	    printf('</div>');
     }
 }
 

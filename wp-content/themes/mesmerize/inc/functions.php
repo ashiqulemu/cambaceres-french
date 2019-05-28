@@ -914,7 +914,7 @@ function mesmerize_widgets_init()
         'title'         => "Pages Sidebar",
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
-        'before_title'  => '<h4 class="widgettitle">',
+        'before_title'  => '<h4 class="widgettitle custom-title">',
         'after_title'   => '</h4>',
     ));
     
